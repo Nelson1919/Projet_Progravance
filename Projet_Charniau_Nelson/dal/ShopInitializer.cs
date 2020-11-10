@@ -24,8 +24,8 @@ namespace Projet_Charniau_Nelson.dal
             context.SaveChanges();
             var games = new List<Game>
             {
-            new Game{Name="Pacman",price=25,image= Image.FromFile(Filename+"\\pacman.jpg") },
-            new Game{Name="Pokémon",price=30,image= Image.FromFile(Filename+"\\pokemon.jpg") },
+            new Game{Name="Pacman",price=25,/*image= Image.FromFile(Filename+"\\pacman.jpg") */},
+            new Game{Name="Pokémon",price=30,/*image= Image.FromFile(Filename+"\\pokemon.jpg")*/ },
             };
             games.ForEach(s => context.Games.Add(s));
             context.SaveChanges();
