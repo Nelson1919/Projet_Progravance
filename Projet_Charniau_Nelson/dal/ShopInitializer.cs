@@ -17,7 +17,7 @@ namespace Projet_Charniau_Nelson.dal
             {
             new User{Name="Carson",FirstName="Alexander",Password="123",Mail="Carson.Alexander@gmail.com",Admin=false,Adress="Rue des coquelicots"},
             new User{Name="Durant",FirstName="Phillipe",Password="123",Mail="Durand.Philipe@gmail.com",Admin=false,Adress="Rue des cocotiers"},
-            new User{Name="Pairet",FirstName="Paul",Password="123",Mail="Pairet.Paul@gmail.com",Admin=false,Adress="Rue des coquelicots"},
+            new User{Name="Pairet",FirstName="Paul",Password="123",Mail="Pairet.Paul@gmail.com",Admin=true,Adress="Rue des coquelicots"},
 
             };
             users.ForEach(s => context.Users.Add(s));
