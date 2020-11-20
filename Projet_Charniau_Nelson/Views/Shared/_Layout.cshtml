@@ -22,9 +22,17 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Accueil", "Index", "Home")</li>
-                    <li>@Html.ActionLink("À propos de", "About", "Home")</li>
-                    <li>@Html.ActionLink("Boutique", "Index", "Games")</li>
-                    <li>@Html.ActionLink("Client", "Index", "Users")</li>
+                    @if (@Session["Nom"] != null && (bool)@Session["Admin"])
+                    {
+                        <li>@Html.ActionLink("Client", "Index", "Users")</li>
+                        <li>@Html.ActionLink("Jeux", "Index", "Games")</li>
+
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("À propos de", "About", "Home")</li>
+                        <li>@Html.ActionLink("Boutique", "Index", "Games")</li>
+                    }
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
