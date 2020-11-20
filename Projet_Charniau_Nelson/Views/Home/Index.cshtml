@@ -4,22 +4,30 @@
 
 <div class="jumbotron">
     <h1>GameCorp</h1>
+    @if (@Session["Nom"] != null)
+    {
+    <h1>Bonjour @Session["Nom"] @Session["Prenom"]</h1>
+    }
 </div>
 <div class="row">
     <div class="col-md-4">
         <h2>Welcome to GameCorp</h2>
         <p>
             GameCorp is a Game Corporation
+
         </p>
     </div>
-    <div class="col-md-4">
-        <h2>Inscrivez-vous ! </h2>
-        <p>C'est içi que vous pouvez vous inscrire</p>
-        <p><a class="btn btn-default" href="https://localhost:44311/Users/Create">M'inscrire &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Connectez-vous ! </h2>
-        <p>C'est içi que vous pouvez vous connectez</p>
-        <p><a class="btn btn-default" href="https://webpifeed.blob.core.windows.net/webpifeed/Partners/ASP.NET%20MVC%20Application%20Using%20Entity%20Framework%20Code%20First.zip">Me connecter &raquo;</a></p>
-    </div>
-</div>
+    @if (@Session["Nom"] != null)
+    {
+        <div class="col-md-4">
+            <h2>Inscrivez-vous ! </h2>
+            <p>C'est içi que vous pouvez vous inscrire</p>
+            <p><a class="btn btn-default" href="https://localhost:44311/Users/Create">M'inscrire &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Connectez-vous ! </h2>
+            <p>C'est içi que vous pouvez vous connectez</p>
+            <p><a class="btn btn-default" href="https://localhost:44311/Login/Index">Me connecter &raquo;</a></p>
+        </div>
+    }
+        </div>
