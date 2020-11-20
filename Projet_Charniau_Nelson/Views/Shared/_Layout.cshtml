@@ -26,9 +26,18 @@
                     <li>@Html.ActionLink("Boutique", "Index", "Games")</li>
                     <li>@Html.ActionLink("Client", "Index", "Users")</li>
                 </ul>
+
                 <ul class="nav navbar-nav navbar-right">
-                    <li>@Html.ActionLink("Inscription", "Create", "Users")</li>
-                    <li>@Html.ActionLink("Se connecter", "Index", "Login")</li>
+                    @if (@Session["Nom"] == null)
+                    {
+                        <li>@Html.ActionLink("Inscription", "Create", "Users")</li>
+                        <li>@Html.ActionLink("Se connecter", "Index", "Login")</li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Se déconnecter", "Index", "Login")</li>
+
+                    }
                 </ul>
             </div>
         </div>

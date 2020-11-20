@@ -25,10 +25,12 @@ namespace Projet_Charniau_Nelson.Controllers
             Session["Nom"] = logg.name;
             Session["Prenom"] =logg.firstname;
             Session["ID"] =logg.id_user;
+            Session["Admin"] = logg.admin;
             return RedirectToAction("Index", "Home");
         }
         public LoginController() {
             db = new Repository();
         }
+
     }
 }

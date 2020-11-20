@@ -4,20 +4,23 @@
 
 <div class="jumbotron">
     <h1>GameCorp</h1>
-    @if (@Session["Nom"] != null)
-    {
-    <h1>Bonjour @Session["Nom"] @Session["Prenom"]</h1>
-    }
+   
 </div>
 <div class="row">
     <div class="col-md-4">
         <h2>Welcome to GameCorp</h2>
         <p>
             GameCorp is a Game Corporation
+            @if(@Session["Nom"] != null)
+            {
+            <p>Bonjour @Session["Nom"] @Session["Prenom"]</p>
+            }
 
-        </p>
-    </div>
-    @if (@Session["Nom"] != null)
+           
+
+
+        </div>
+    @if(@Session["Nom"] == null)
     {
         <div class="col-md-4">
             <h2>Inscrivez-vous ! </h2>
