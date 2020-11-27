@@ -128,7 +128,6 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ComfactsController.cs" />
-    <Compile Include="Controllers\DetailsController.cs" />
     <Compile Include="Controllers\GamesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -357,11 +356,6 @@
     <Content Include="Views\Users\Details.cshtml" />
     <Content Include="Views\Users\Edit.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
-    <Content Include="Views\Games\Create.cshtml" />
-    <Content Include="Views\Games\Delete.cshtml" />
-    <Content Include="Views\Games\Details.cshtml" />
-    <Content Include="Views\Games\Edit.cshtml" />
-    <Content Include="Views\Games\Index.cshtml" />
     <Content Include="Views\Comfacts\Create.cshtml" />
     <Content Include="Views\Comfacts\Delete.cshtml" />
     <Content Include="Views\Comfacts\Details.cshtml" />
@@ -372,13 +366,19 @@
     <Content Include="Views\Details\Details.cshtml" />
     <Content Include="Views\Details\Edit.cshtml" />
     <Content Include="Views\Details\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Login\Deco.cshtml" />
+    <Content Include="Views\View.cshtml" />
+    <Content Include="Views\Games\Create.cshtml" />
+    <Content Include="Views\Games\Delete.cshtml" />
+    <Content Include="Views\Games\Details.cshtml" />
+    <Content Include="Views\Games\Edit.cshtml" />
+    <Content Include="Views\Games\Index.cshtml" />
     <Content Include="Views\Paniers\Create.cshtml" />
     <Content Include="Views\Paniers\Delete.cshtml" />
     <Content Include="Views\Paniers\Details.cshtml" />
     <Content Include="Views\Paniers\Edit.cshtml" />
     <Content Include="Views\Paniers\Index.cshtml" />
-    <Content Include="Views\Login\Index.cshtml" />
-    <Content Include="Views\Login\Deco.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

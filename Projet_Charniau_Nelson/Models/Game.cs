@@ -14,8 +14,6 @@ namespace Projet_Charniau_Nelson.Models
         public int ID { get; set; }
         public string Name { get; set; }
         public float price { get; set; }
-      //  public Image image { get; set;}
-        public Boolean isavailable { get; set; }
 
 
     }

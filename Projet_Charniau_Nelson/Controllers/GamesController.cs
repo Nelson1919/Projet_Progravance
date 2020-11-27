@@ -47,7 +47,7 @@ namespace Projet_Charniau_Nelson.Controllers
         // plus de détails, consultez https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,price,isavailable")] Game game)
+        public ActionResult Create([Bind(Include = "ID,Name,price")] Game game)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace Projet_Charniau_Nelson.Controllers
         // plus de détails, consultez https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Name,price,isavailable")] Game game)
+        public ActionResult Edit([Bind(Include = "ID,Name,price")] Game game)
         {
             if (ModelState.IsValid)
             {
