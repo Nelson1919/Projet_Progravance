@@ -31,6 +31,13 @@ namespace Projet_Charniau_Nelson.Controllers
         public LoginController() {
             db = new Repository();
         }
+        public ActionResult Deco()
+        {
+            // Put user code to initialize the page here
+            Session.Abandon();
+            return RedirectToAction("Index", "Home");
+
+        }
 
     }
 }
