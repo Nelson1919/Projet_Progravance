@@ -115,6 +115,10 @@ namespace Projet_Charniau_Nelson.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult Boutique()
+        {
+            return View(db.Games.ToList());
+        }
 
         protected override void Dispose(bool disposing)
         {
