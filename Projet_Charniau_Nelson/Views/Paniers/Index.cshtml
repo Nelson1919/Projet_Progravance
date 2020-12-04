@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Projet_Charniau_Nelson.Models.Panier>
+﻿@model IEnumerable<Projet_Charniau_Nelson.DTO.PanierDTO>
 
 @{
     ViewBag.Title = "Index";
@@ -6,28 +6,31 @@
 
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Buyer.Name)
+            @Html.DisplayNameFor(model => model.Nom)
         </th>
-        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.GameID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.prix)
+        </th>
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Buyer.Name)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>
-    </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Nom)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.GameID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.prix)
+    </td>
+</tr>
 }
 
 </table>

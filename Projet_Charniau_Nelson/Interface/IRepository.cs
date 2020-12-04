@@ -9,6 +9,6 @@ namespace Projet_Charniau_Nelson.Interface
     public interface IRepository
     {
         LoginDTO Authentifier(string email, string password);
-        
+        List<PanierDTO> InfoPanier(int id);
     }
 }

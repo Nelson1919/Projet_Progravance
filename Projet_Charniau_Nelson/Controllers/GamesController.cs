@@ -128,5 +128,12 @@ namespace Projet_Charniau_Nelson.Controllers
             }
             base.Dispose(disposing);
         }
+        public ActionResult Ajouter(int id) {
+            int IdUser = (int)Session["ID"];
+            Panier p = new Panier { UserID = IdUser, GameID = id };
+            db.Paniers.Add(p);
+            db.SaveChanges();
+            return RedirectToAction("Index","Paniers");
+        }
     }
 }

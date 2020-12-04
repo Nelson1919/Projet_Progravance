@@ -16,6 +16,7 @@ namespace Projet_Charniau_Nelson.Models
         }
         public int UserID { get; set; }
         public virtual User Buyer { get; set; }
+        public int GameID { get; set; }
         public virtual ICollection<Game> Games { get; set; }
 
 

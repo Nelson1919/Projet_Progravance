@@ -18,17 +18,25 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.price)
-            </td>
-            <td>
-                @Html.ActionLink("Ajouter", "Ajouter", new { id = item.ID }) |
-            </td>
-        </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.price)
+    </td>
+    @if (Session["ID"] != null)
+    {
+        <td>
+            @Html.ActionLink("Ajouter", "Ajouter", new { id = item.ID })
+        </td>
+    }
+    else
+    {<td>
+    @Html.ActionLink("Ajouter", "Index", "Login")
+</td>
+    }
+</tr>
     }
 
 </table>

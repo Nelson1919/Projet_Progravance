@@ -17,5 +17,14 @@ namespace Projet_Charniau_Nelson.dal
             return logg;
 
         }
+        public List<PanierDTO> InfoPanier(int id) {
+            var info = (from p in db.Paniers
+                        join g in db.Games
+                        on p.GameID equals g.ID
+                        where p.UserID==id
+                        select new PanierDTO { GameID = p.GameID, Nom = g.Name, prix = g.price });
+            return info.ToList();
+
+        }
     }
 }

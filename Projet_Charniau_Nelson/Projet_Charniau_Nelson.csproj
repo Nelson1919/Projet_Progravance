@@ -137,6 +137,7 @@
     <Compile Include="dal\ShopContext.cs" />
     <Compile Include="dal\ShopInitializer.cs" />
     <Compile Include="DTO\LoginDTO.cs" />
+    <Compile Include="DTO\PanierDTO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -367,7 +368,6 @@
     <Content Include="Views\Details\Edit.cshtml" />
     <Content Include="Views\Details\Index.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
-    <Content Include="Views\Login\Deco.cshtml" />
     <Content Include="Views\View.cshtml" />
     <Content Include="Views\Games\Create.cshtml" />
     <Content Include="Views\Games\Delete.cshtml" />

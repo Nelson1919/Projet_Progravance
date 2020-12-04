@@ -32,7 +32,12 @@
                     {
                         <li>@Html.ActionLink("À propos de", "About", "Home")</li>
                         <li>@Html.ActionLink("Boutique", "Boutique", "Games")</li>
+                        if (@Session["Nom"] != null)
+                        {
+                            <li>@Html.ActionLink("Panier", "Index", "Paniers")</li>
+                        }
                     }
+
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
@@ -44,6 +49,7 @@
                     else
                     {
                         <li>@Html.ActionLink("Se déconnecter", "Deco", "Login")</li>
+
 
                     }
                 </ul>

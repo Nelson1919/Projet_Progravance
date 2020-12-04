@@ -8,18 +8,21 @@ using System.Web;
 using System.Web.Mvc;
 using Projet_Charniau_Nelson.Models;
 using Projet_Charniau_Nelson.dal;
+using Projet_Charniau_Nelson.Interface;
+using Projet_Charniau_Nelson.DTO;
 
 namespace Projet_Charniau_Nelson.Controllers
 {
     public class PaniersController : Controller
     {
         private ShopContext db = new ShopContext();
+        private IRepository bdd;
 
         // GET: Paniers
         public ActionResult Index()
         {
-            var paniers = db.Paniers.Include(p => p.Buyer);
-            return View(paniers.ToList());
+            List<PanierDTO> list = bdd.InfoPanier((int)Session["ID"]);
+            return View(list);
         }
 
         // GET: Paniers/Details/5
@@ -128,6 +131,10 @@ namespace Projet_Charniau_Nelson.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+        public PaniersController()
+        {
+            bdd = new Repository();
         }
     }
 }
