@@ -152,5 +152,15 @@ namespace Projet_Charniau_Nelson.Controllers
             return RedirectToAction("Index");
 
         }
+
+        public ActionResult Confirmer(int id)
+        {
+            List<Panier> panier = bdd.Listepanier(id);
+            int idcomfact=bdd.CreaCom(id);
+            bdd.EnvoyerversDetail(panier, idcomfact);
+            bdd.Supprimer(panier);
+            return RedirectToAction("Index"); //Rediriger vers Mescommandes
+
+        }
     }
 }

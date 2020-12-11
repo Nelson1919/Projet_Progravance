@@ -13,5 +13,7 @@ namespace Projet_Charniau_Nelson.Interface
         List<PanierDTO> InfoPanier(int id);
          List<Panier> Listepanier(int id);
         void Supprimer(List<Panier> panier);
+        int CreaCom(int id);
+        void EnvoyerversDetail(List<Panier> panier, int idcomfact);
     }
 }

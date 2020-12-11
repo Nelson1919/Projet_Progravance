@@ -41,6 +41,27 @@ namespace Projet_Charniau_Nelson.dal
             }
             db.SaveChanges();
         }
+        public int CreaCom(int id) {
+            Comfact com = new Comfact();
+            com.UserID = id;
+            com.DateCom = DateTime.Now;
+            db.Comfacts.Add(com);
+            db.SaveChanges();
 
+            return com.ID;
+
+        }
+        public void EnvoyerversDetail(List<Panier> panier,int idcomfact)
+        {
+            foreach (Panier p in panier)
+            {
+                Detail det = new Detail();
+                det.ComFactID = idcomfact;
+                det.GameID = p.GameID;
+                db.details.Add(det);
+                db.SaveChanges();
+            }
+           
+        }
     }
 }
