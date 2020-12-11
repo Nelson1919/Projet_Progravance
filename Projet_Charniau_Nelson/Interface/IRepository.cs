@@ -1,4 +1,5 @@
 ﻿using Projet_Charniau_Nelson.DTO;
+using Projet_Charniau_Nelson.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +11,7 @@ namespace Projet_Charniau_Nelson.Interface
     {
         LoginDTO Authentifier(string email, string password);
         List<PanierDTO> InfoPanier(int id);
+         List<Panier> Listepanier(int id);
+        void Supprimer(List<Panier> panier);
     }
 }

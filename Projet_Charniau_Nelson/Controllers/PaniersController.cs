@@ -22,6 +22,12 @@ namespace Projet_Charniau_Nelson.Controllers
         public ActionResult Index()
         {
             List<PanierDTO> list = bdd.InfoPanier((int)Session["ID"]);
+            float tot = 0;
+            foreach(PanierDTO p in list)
+            {
+                tot += p.prix;
+            }
+            ViewBag.total= tot;
             return View(list);
         }
 
@@ -132,9 +138,19 @@ namespace Projet_Charniau_Nelson.Controllers
             }
             base.Dispose(disposing);
         }
+
         public PaniersController()
         {
             bdd = new Repository();
+        }
+        public ActionResult Supprimer(int id)
+        {
+            List<Panier> panier = bdd.Listepanier(id);
+
+            bdd.Supprimer(panier);
+
+            return RedirectToAction("Index");
+
         }
     }
 }

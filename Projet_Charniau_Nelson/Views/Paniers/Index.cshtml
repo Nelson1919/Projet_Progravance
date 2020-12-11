@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Mon panier</h2>
 
 <table class="table">
     <tr>
@@ -19,18 +19,23 @@
         </th>
     </tr>
 
-@foreach (var item in Model) {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.Nom)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.GameID)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.prix)
-    </td>
-</tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GameID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.prix)
+            </td>
+
+        </tr>
+    }
 
 </table>
+Total : @ViewBag.total
+@Html.ActionLink("Confirmer", "Confirmer", new { id = Session["ID"] })
+@Html.ActionLink("Supprimer", "Supprimer", new { id = Session["ID"] })

@@ -1,5 +1,6 @@
 ﻿using Projet_Charniau_Nelson.DTO;
 using Projet_Charniau_Nelson.Interface;
+using Projet_Charniau_Nelson.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,5 +27,20 @@ namespace Projet_Charniau_Nelson.dal
             return info.ToList();
 
         }
+        public List<Panier> Listepanier(int id)
+        {
+            List<Panier> panier = db.Paniers.Where(p => p.UserID == id).ToList();
+            return panier;
+        }
+
+        public void Supprimer(List<Panier> panier)
+        {
+            foreach (Panier p in panier)
+            {
+                db.Paniers.Remove(p);
+            }
+            db.SaveChanges();
+        }
+
     }
 }

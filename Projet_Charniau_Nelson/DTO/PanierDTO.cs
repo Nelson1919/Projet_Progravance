@@ -10,6 +10,6 @@ namespace Projet_Charniau_Nelson.DTO
         public int GameID { get; set; }
         public String Nom{ get; set; }
         public  float prix { get; set; }
-        //public int quantite { get; set; }
+        
     }
 }
