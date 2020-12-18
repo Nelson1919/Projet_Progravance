@@ -15,5 +15,7 @@ namespace Projet_Charniau_Nelson.Models
         public virtual User Buyer { get; set; }
         public DateTime DateCom { get; set; }
 
+        public virtual ICollection<Detail> Detail { get; set; }
+
     }
 }

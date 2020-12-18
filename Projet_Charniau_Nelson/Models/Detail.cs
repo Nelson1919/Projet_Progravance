@@ -17,7 +17,7 @@ namespace Projet_Charniau_Nelson.Models
         public int ComFactID  { get; set; }
         public virtual Comfact comfact { get; set; }
         public int GameID { get; set; }
-        public virtual ICollection<Game> Games { get; set; }
+        public virtual Game Game { get; set; }
 
         public float prix { get; set; }
     }

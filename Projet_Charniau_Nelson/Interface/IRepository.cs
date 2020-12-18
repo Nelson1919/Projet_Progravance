@@ -15,5 +15,6 @@ namespace Projet_Charniau_Nelson.Interface
         void Supprimer(List<Panier> panier);
         int CreaCom(int id);
         void EnvoyerversDetail(List<Panier> panier, int idcomfact);
+        List<Comfact> InfoCom(int id);
     }
 }

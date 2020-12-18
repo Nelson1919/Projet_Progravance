@@ -159,6 +159,7 @@ namespace Projet_Charniau_Nelson.Controllers
             int idcomfact=bdd.CreaCom(id);
             bdd.EnvoyerversDetail(panier, idcomfact);
             bdd.Supprimer(panier);
+
             return RedirectToAction("Index"); //Rediriger vers Mescommandes
 
         }

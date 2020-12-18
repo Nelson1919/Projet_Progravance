@@ -8,18 +8,25 @@ using System.Web;
 using System.Web.Mvc;
 using Projet_Charniau_Nelson.Models;
 using Projet_Charniau_Nelson.dal;
+using Projet_Charniau_Nelson.Interface;
+using Projet_Charniau_Nelson.DTO;
 
 namespace Projet_Charniau_Nelson.Controllers
 {
     public class ComfactsController : Controller
     {
         private ShopContext db = new ShopContext();
+        private IRepository bdd;
+        public ComfactsController()
+        {
+            bdd = new Repository();
+        }
 
         // GET: Comfacts
         public ActionResult Index()
         {
-            var comfacts = db.Comfacts.Include(c => c.Buyer);
-            return View(comfacts.ToList());
+            List<Comfact> list = bdd.InfoCom((int)Session["ID"]);
+            return View(list);
         }
 
         // GET: Comfacts/Details/5

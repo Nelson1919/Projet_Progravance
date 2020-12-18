@@ -58,10 +58,18 @@ namespace Projet_Charniau_Nelson.dal
                 Detail det = new Detail();
                 det.ComFactID = idcomfact;
                 det.GameID = p.GameID;
+                //Récuperer le prix
                 db.details.Add(det);
                 db.SaveChanges();
             }
            
         }
+        public List<Comfact> InfoCom(int id)
+        {
+            var info = db.Comfacts.Where(c => c.UserID == id);
+            return info.ToList();
+
+        }
+
     }
 }

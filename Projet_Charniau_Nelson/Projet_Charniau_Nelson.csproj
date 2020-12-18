@@ -136,6 +136,7 @@
     <Compile Include="dal\Repository.cs" />
     <Compile Include="dal\ShopContext.cs" />
     <Compile Include="dal\ShopInitializer.cs" />
+    <Compile Include="DTO\DetailDTO.cs" />
     <Compile Include="DTO\LoginDTO.cs" />
     <Compile Include="DTO\PanierDTO.cs" />
     <Compile Include="Global.asax.cs">

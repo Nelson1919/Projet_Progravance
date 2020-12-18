@@ -1,39 +1,22 @@
 ﻿@model IEnumerable<Projet_Charniau_Nelson.Models.Comfact>
+    @{
+        ViewBag.Title = "Index";
+    }
 
-@{
-    ViewBag.Title = "Index";
-}
+    <h2>Index</h2>
+    <h2>Mes commandes</h2>
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Buyer.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DateCom)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Buyer.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DateCom)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <dd> Commande : @Html.DisplayFor(modelItem => item.ID)</dd>
+        <dd>Effectuée le : @Html.DisplayFor(modelItem => item.DateCom)</dd>
 
-</table>
+        foreach (var item2 in item.Detail)
+        {
+                <dd> - @Html.DisplayFor(modelItem => item2.Game.Name) @Html.DisplayFor(modelItem => item2.Game.price)€</dd>
+        }
+
+
+    }
