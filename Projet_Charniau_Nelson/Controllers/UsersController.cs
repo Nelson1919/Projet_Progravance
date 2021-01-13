@@ -18,7 +18,7 @@ namespace Projet_Charniau_Nelson.Controllers
         // GET: Users
         public ActionResult Index()
         {
-            return View(db.Users.ToList());
+             return RedirectToAction("Index", "Home"); ;
         }
 
         // GET: Users/Details/5
